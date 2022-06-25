@@ -9,9 +9,7 @@ function TodoList() {
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return
     }
-    
     const newTodos = [todo, ...todos]
-    
     setTodos(newTodos)
   }
 
@@ -25,7 +23,6 @@ function TodoList() {
 
   const removeTodo = id => {
     const removeArr = [...todos].filter(todo => todo.id !== id)
-
     setTodos(removeArr)
   }
 
