@@ -1,1 +1,14 @@
+.todo-app {
+  display: flex;
+  margin: 32px;
+  padding: 16px;
+  justify-content: center;
+}
 
+.todo-form {
+  margin-top: 16px;
+}
+
+.todo-button {
+  background: linear-gradient(315deg, #da9003, #d8a443);
+}
