@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { RiCloseCircleLine} from "react-icons/ri"
 import { TiEdit } from "react-icons/ti"
 import TodoForm from './TodoForm'
-import TodoList from './TodoList'
 
 function Todo( {todos, completeTodo, removeTodo, updateTodo} ) {
   const [edit, setEdit] = useState({
@@ -22,7 +21,7 @@ function Todo( {todos, completeTodo, removeTodo, updateTodo} ) {
     return <TodoForm edit={edit} onSubmit={submitUpdate}/>
   }
 
-  return todos.map((todo,index) => (
+  return todos.map((todo, index) => (
     <div 
       className={todo.isComplete ? "todo-row complete" : "todo-row"} 
       key={index}
@@ -43,6 +42,7 @@ function Todo( {todos, completeTodo, removeTodo, updateTodo} ) {
           onClick={() => setEdit({id: todo.id, value: todo.text })}
           className="edit-icon"
         />
+        <input type="checkbox" checked={todo.isComplete}></input>
       </div>
     </div>
   ))
