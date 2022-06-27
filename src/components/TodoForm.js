@@ -13,6 +13,11 @@ function TodoForm(props) {
     setInput(x.target.value)
   }
 
+  const handleClear = todo => {
+    const undoneTodos = todo.filter(todo => !todo.isComplete)
+    handleSubmit(undoneTodos) // mistake #########################
+  }
+
   const handleSubmit = e => {
     e.preventDefault();
     props.onSubmit({
@@ -20,12 +25,8 @@ function TodoForm(props) {
       text: input
     })
 
-    setInput('') //macht dass der Input nach Submit wieder geleert wird
+    setInput('') //clears input after submit
   }
-
-//  function handleClear() {
-//   const newTodos = todo.filter(todo => !todo.isComplete)
-//  } 
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
@@ -39,7 +40,7 @@ function TodoForm(props) {
         ref={inputRef}
         />
       <button className='btn todo-button'>Add</button>
-      <button className='btn clear-todo'>Clear</button>
+      <button className='btn clear-todo' onClick={handleClear}>Clear</button>
 
     </form>
 

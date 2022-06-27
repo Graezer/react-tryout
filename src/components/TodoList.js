@@ -37,8 +37,6 @@ function TodoList() {
     setTodos(updateTodos)
   }
 
-
-
   return (
     <div>
       <h2>..todays todos</h2>

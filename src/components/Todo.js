@@ -30,7 +30,8 @@ function Todo( {todos, completeTodo, removeTodo, updateTodo} ) {
         key={todo.id} 
         onClick={() => 
         completeTodo(todo.id)}>
-        <p>{todo.text}</p>
+        <p>{todo.text}</p>      
+        <input type="checkbox" checked={todo.completeTodo} ></input>
       </div>
 
       <div className='icons'>
@@ -42,7 +43,6 @@ function Todo( {todos, completeTodo, removeTodo, updateTodo} ) {
           onClick={() => setEdit({id: todo.id, value: todo.text })}
           className="edit-icon"
         />
-        <input type="checkbox" checked={todo.isComplete}></input>
       </div>
     </div>
   ))
