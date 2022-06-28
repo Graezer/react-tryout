@@ -38,7 +38,7 @@ function TodoList() {
   }
 
   return (
-    <div>
+    <div className='list'>
       <h2>..todays todos</h2>
       <TodoForm onSubmit={addTodo}/>
       <Todo 

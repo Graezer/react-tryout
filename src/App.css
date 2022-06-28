@@ -12,3 +12,12 @@
 .todo-button {
   background: linear-gradient(315deg, #da9003, #d8a443);
 }
+
+.list {
+  background: bisque;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 4px;
+  font-family: inherit;
+}
