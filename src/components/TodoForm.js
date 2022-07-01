@@ -1,3 +1,4 @@
+import { toHaveDescription } from '@testing-library/jest-dom/dist/matchers'
 import React, {useState, useEffect,  useRef} from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -11,11 +12,6 @@ function TodoForm(props) {
 
   const handleChange = x => {
     setInput(x.target.value)
-  }
-
-  const handleClear = todo => {
-    const undoneTodos = todo.filter(todo => !todo.isComplete)
-    handleSubmit(undoneTodos) // mistake #########################
   }
 
   const handleSubmit = e => {
@@ -33,14 +29,13 @@ function TodoForm(props) {
       <input 
         type="text" 
         placeholder='I have to do..' 
-        value={input} 
+        value={input}
         name="text" 
         className='todo-input'
         onChange={handleChange}
         ref={inputRef}
         />
       <button className='btn todo-button'>Add</button>
-      <button className='btn clear-todo' onClick={handleClear}>Clear</button>
 
     </form>
 

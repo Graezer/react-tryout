@@ -22,15 +22,10 @@ function Todo( {todos, completeTodo, removeTodo, updateTodo} ) {
   }
 
   return todos.map((todo, index) => (
-    <div 
-      className={todo.isComplete ? "todo-row complete" : "todo-row"} 
-      key={index}
+    <div className={todo.isComplete ? "complete" : "todo-row"} key={index}
     >
-      <div 
-        key={todo.id} 
-        onClick={() => 
-        completeTodo(todo.id)}>
-        <p>{todo.text}</p>      
+      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+        <p>{todo.text}</p>
         <input type="checkbox" checked={todo.completeTodo} ></input>
       </div>
 

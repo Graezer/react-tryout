@@ -29,24 +29,32 @@ function TodoList() {
   const completeTodo = id => {
     let updateTodos = todos.map(todo => {
       if (todo.id === id) {
-        todo.isComplete = !todo.isComplete
-
+        if (todo.isComplete === false) {
+          todo.isComplete = !todo.isComplete
+        }
       }
       return todo
     })
     setTodos(updateTodos)
   }
 
+  const handleClear = () => {
+    const newTodos = todos.filter(todo => todo.isComplete === false)
+    setTodos(newTodos)
+  }
+
   return (
     <div className='list'>
       <h2>..todays todos</h2>
       <TodoForm onSubmit={addTodo}/>
+      <button className='btn btn-primary clear-todo' onClick={handleClear}>Clear</button>
       <Todo 
         todos={todos}
         completeTodo={completeTodo}
         removeTodo={removeTodo}
         updateTodo={updateTodo}
       />
+      <div>{todos.filter(todo => todo.className !== "complete").length} tasks left to do</div>
     </div>
   )
 }
