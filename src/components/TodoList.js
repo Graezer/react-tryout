@@ -39,7 +39,7 @@ function TodoList() {
   }
 
   const handleClear = () => {
-    const newTodos = todos.filter(todo => todo.isComplete === false)
+    const newTodos = todos.filter(todo => !todo.isComplete)
     setTodos(newTodos)
   }
 
